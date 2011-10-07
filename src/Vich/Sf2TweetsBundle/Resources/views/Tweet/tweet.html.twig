@@ -1,0 +1,11 @@
+<div class="tweet">
+    <a href="http://www.twitter.com/{{ tweet.twitterUserScreenName }}" target="_blank">
+        <img src="{{ tweet.twitterUserAvatarUrl }}" alt="{{ tweet.twitterUserScreenName }}" title="{{ tweet.twitterUserScreenName }}" />
+    </a>
+    <a href="http://www.twitter.com/{{ tweet.twitterUserScreenName }}" target="_blank">
+        @{{ tweet.twitterUserScreenName }}
+    </a>
+    <p class="tweet_message">
+        {{ tweet.formattedMessage | raw }}
+    </p>
+</div>

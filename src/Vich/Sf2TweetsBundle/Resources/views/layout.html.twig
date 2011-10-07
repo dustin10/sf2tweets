@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Symfony2 Tweets{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="http://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet" type="text/css" media="screen" />
+    <link href="{{ asset('bundles/vichsf2tweets/css/site.css') }}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock stylesheets %}
+  
+{% block body %}
+   {% block content %}{% endblock content %}
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="{{ path('homepage') }}">Symfony2 Tweets</a>
+                <p class="pull-right tagline">
+                    {{ 'topbar.tagline' | trans([], 'VichSf2TweetsBundle') }}
+                </p>
+                <div class="new-tweet">
+                    {{ 'topbar.newtweet' | trans([], 'VichSf2TweetsBundle') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottombar">
+        <div class="bottombar-inner">
+            <div class="container-fluid">
+                <p class="pull-left description">
+                    Just a fun site leveraging <a class="italic" href="http://www.symfony.com" target="_blank">Symfony2</a>, 
+                    <a class="italic" href="http://nodejs.org" target="_blank">Node.js</a> and a few  of my bundles, 
+                    <a class="italic" href="https://github.com/dustin10/VichGeographicalBundle" target="_blank">VichGeographicalBundle</a> &amp; 
+                    <a class="italic" href="https://github.com/dustin10/VichTweetFormatterBundle" target="_blank">VichTweetFormatterBundle</a>
+                </p>
+                <nav class="pull-right footer-nav">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                {{ 'bottombar.about' | trans([], 'VichSf2TweetsBundle') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="pull-right fork-me" href="https://github.com/dustin10" target="_blank">
+                                {{ 'bottombar.fork' | trans([], 'VichSf2TweetsBundle') }}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+    
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <script src="http://localhost:9999/socket.io/socket.io.js" type="text/javascript"></script>
+{% endblock javascripts %}

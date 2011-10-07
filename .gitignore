@@ -1,0 +1,9 @@
+web/bundles/
+app/bootstrap.php.cache
+app/cache/*
+app/logs/*
+app/config/parameters.ini
+vendor/
+nbproject/
+catalog.xml
+.DS_Store

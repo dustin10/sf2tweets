@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="Dustin Dobervich">
+        <title>{% block title %}{% endblock title %}</title>
+        {% block stylesheets %}{% endblock stylesheets %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {{ vichgeo_include_js() }}
+    </head>
+    <body>
+        {% block body %}{% endblock body %}
+        {% block javascripts %}
+            <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+        {% endblock javascripts %}
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'VichSf2TweetsBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="map">
+        <div class="map-inner">
+            {{ vichgeo_map_for('tweets', tweets) }}
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-inner">
+            {% for tweet in tweets %}
+                {% include 'VichSf2TweetsBundle:Tweet:tweet.html.twig' with { 'tweet' : tweet } %}
+            {% endfor %}
+            {% include 'VichSf2TweetsBundle:Tweet:tweetPrototype.html.twig' %}
+            {% include 'VichSf2TweetsBundle:Map:infoWindowPrototype.html.twig' %}
+        </div>
+    </div>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/vichsf2tweets/js/main.js') }}" type="text/javascript"></script>
+{% endblock javascripts %}

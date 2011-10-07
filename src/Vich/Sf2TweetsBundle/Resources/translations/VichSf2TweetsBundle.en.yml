@@ -1,0 +1,7 @@
+#top bar
+topbar.tagline: "#Symfony2 tweets streaming in real-time!"
+topbar.newtweet: "New Tweet Received!"
+
+# bottom bar
+bottombar.about: "About"
+bottombar.fork: "Fork me on GitHub"
