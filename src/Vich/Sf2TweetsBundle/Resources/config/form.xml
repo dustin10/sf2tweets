@@ -15,7 +15,9 @@
             <argument>tweet</argument>
             <argument />
             <argument type="collection">
-                <argument key="validation_groups">CreateTweet</argument>
+                <argument key="validation_groups" type="collection">
+                    <argument>CreateTweet</argument>
+                </argument>
             </argument>
         </service>
         

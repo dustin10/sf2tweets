@@ -36,9 +36,9 @@ class TweetType extends AbstractType
             ->add('twitterId')
             ->add('twitterUserScreenName')
             ->add('twitterUserAvatarUrl')
+            ->add('twitterUserLocation')
             ->add('message')
             ->add('messageEntities')
-            ->add('twitterUserLocation')
         ;
         
         $builder->addEventListener(FormEvents::BIND_CLIENT_DATA, function(FilterDataEvent $e) {

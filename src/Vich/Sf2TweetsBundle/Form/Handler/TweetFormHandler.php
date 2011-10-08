@@ -29,6 +29,26 @@ class TweetFormHandler
     protected $form;
     
     /**
+     * Gets the form.
+     * 
+     * @return Form The form.
+     */
+    public function getForm()
+    {
+        return $this->form;
+    }
+    
+    /**
+     * Gets the tweet.
+     * 
+     * @return Tweet The tweet.
+     */
+    public function getTweet()
+    {
+        return $this->form->getData();
+    }
+    
+    /**
      * Constructs a new instance of TweetFormHandler.
      * 
      * @param Request $request The request.

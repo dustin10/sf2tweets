@@ -33,14 +33,13 @@ class TweetController extends Controller
      */
     public function postTweetsAction()
     {
-        $form = $this->get('vich_sf2tweets.form.tweet');
         $handler = $this->get('vich_sf2tweets.form.handler.tweet');
         
         $success = $handler->handle();
         if ($success) {
-            return array('tweet' => $form->getData());
+            return array('tweet' => $handler->getTweet());
         }
         
-        return array('form' => $form);
+        return array('form' => $handler->getForm());
     }
 }

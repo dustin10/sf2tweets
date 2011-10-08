@@ -41,7 +41,6 @@ class Tweet implements TweetInterface
      * @ORM\Column(type="string", length="255", name="twitter_user_screen_name")
      * 
      * @Assert\NotBlank(message="The twitter user screen name is required.", groups={"CreateTweet"})
-     * @Assert\MinLength(limit="2", message="The user screen name is too short.", groups={"CreateTweet"})
      * @Assert\MaxLength(limit="255", message="The user screen name is too long.", groups={"CreateTweet"})
      * 
      * @var string $twitterUserScreenName
@@ -51,9 +50,9 @@ class Tweet implements TweetInterface
     /**
      * @ORM\Column(type="string", length="255", name="twitter_user_avatar_url")
      * 
-     * @Assert\NotBlank(message="The twitter user screen name is required.", groups={"CreateTweet"})
+     * @Assert\NotBlank(message="The twitter user avatar url is required.", groups={"CreateTweet"})
      * @Assert\Url(message="The twitter user avatar url is invalid.", groups={"CreateTweet"})
-     * @Assert\MaxLength(limit="255", message="The user screen name is too long.", groups={"CreateTweet"})
+     * @Assert\MaxLength(limit="255", message="The user avatar url is too long.", groups={"CreateTweet"})
      * 
      * @var string $twitterUserAvatarUrl
      */
