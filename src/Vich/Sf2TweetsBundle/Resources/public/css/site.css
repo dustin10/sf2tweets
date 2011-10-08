@@ -238,3 +238,7 @@ p.description {
 .tweet-prototype, .info-window-prototype {
     display: none;
 }
+
+a.repo {
+    text-decoration: underline;
+}
