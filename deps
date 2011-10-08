@@ -67,3 +67,11 @@
 [JMSSerializerBundle]
     git=git://github.com/schmittjoh/JMSSerializerBundle.git
     target=bundles/JMS/SerializerBundle
+
+[VichGeographicalBundle]
+    git=git://github.com/dustin10/VichGeographicalBundle.git
+    target=bundles/Vich/GeographicalBundle
+
+[VichTweetFormatterBundle]
+    git=git://github.com/dustin10/VichTweetFormatterBundle.git
+    target=bundles/Vich/TweetFormatterBundle
