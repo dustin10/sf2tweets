@@ -50,7 +50,7 @@ class TweetListener implements EventSubscriber
     {
         $entity = $e->getEntity();
         if ($entity instanceof Tweet) {
-            $formattedMsg = $this->formatter->format($entity->getMessage());
+            $formattedMsg = $this->formatter->format($entity);
             $entity->setFormattedMessage($formattedMsg);
         }
     }
