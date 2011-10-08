@@ -9,12 +9,13 @@ security:
     providers:
         in_memory:
             users:
-                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                user: { password: <pass>, roles: ['ROLE_USER'] }
 
     firewalls:
         main:
             pattern:    ^/
+            http_basic:
+                realm: "Post Tweet"
             anonymous: ~
 
     access_control:

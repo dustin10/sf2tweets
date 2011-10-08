@@ -4,6 +4,7 @@ namespace Vich\Sf2TweetsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations\View;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 use Vich\Sf2TweetsBundle\Entity\Tweet;
 
 /**
@@ -30,6 +31,7 @@ class TweetController extends Controller
      * The post tweets action.
      * 
      * @View
+     * @Secure(roles="ROLE_USER")
      */
     public function postTweetsAction()
     {
