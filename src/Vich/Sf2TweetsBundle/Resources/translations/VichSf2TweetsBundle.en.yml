@@ -12,3 +12,6 @@ aboutdialog.first_paragraph:  "This site uses Node.js to connect to the Twitter 
 aboutdialog.second_paragraph: "If you would like to learn more about the site, or you want to contribute and make it even better then visit the GitHub repository"
 aboutdialog.repo: "Symfony2 Tweets Repo"
 aboutdialog.node_repo: "Symfony2 Tweets Node.js Library Repo"
+
+# tweet
+tweet.view: "View Tweet"

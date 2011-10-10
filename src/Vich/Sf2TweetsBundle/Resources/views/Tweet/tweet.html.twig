@@ -8,4 +8,9 @@
     <p class="tweet_message">
         {{ tweet.formattedMessage | raw }}
     </p>
+    <p>
+        <a href="http://www.twitter.com/{{ tweet.twitterUserScreenName }}/status/{{ tweet.twitterId }}" target="_blank">
+            {{ 'tweet.view' | trans([], 'VichSf2TweetsBundle') }} &raquo;
+        </a>
+    </p>
 </div>
