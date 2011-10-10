@@ -1,9 +1,9 @@
 <div class="tweet-info-window">
-    <p>
+    <p class="tweet-message">
         {{ obj.formattedMessage | raw }}
     </p>
     <p>
-        <a href="http://www.twitter.com/{{ obj.twitterUserScreenName }}/status/{{ obj.twitterId }}" target="_blank">
+        <a href="http://www.twitter.com/{{ obj.twitterUserScreenName }}/status/{{ obj.twitterId }}" target="_blank" class="tweet-view">
             {{ 'tweet.view' | trans([], 'VichSf2TweetsBundle') }} &raquo;
         </a>
     </p>

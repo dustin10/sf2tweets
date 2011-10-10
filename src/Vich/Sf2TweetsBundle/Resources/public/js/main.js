@@ -17,14 +17,12 @@ $(function() {
         });
         
         // create the new tweet html from the prototype
-        var tweetHtml = $('.tweet-prototype').first().html();
-        tweetHtml = tweetHtml.replace(/{screen_name}/g, data.twitter_user_screen_name);
-        tweetHtml = tweetHtml.replace(/{avatar_url}/g, data.twitter_user_avatar_url);
-        tweetHtml = tweetHtml.replace(/{message}/g, data.formatted_message);
-        tweetHtml = tweetHtml.replace(/{id}/g, data.twitter_id);
-        
-        // add the element
-        $('.sidebar-inner').prepend(tweetHtml);
+        var tweetEl = $('.sidebar-inner').prepend($('.tweet-prototype').first().html()).find('div.tweet').first();
+        tweetEl.find('a.tweet-avatar').attr('href', 'http://www.twitter.com/' + data.twitter_user_screen_name).attr('alt', data.twitter_user_screen_name).attr('title', data.twitter_user_screen_name);
+        tweetEl.find('img').attr('src', data.twitter_user_avatar_url);
+        tweetEl.find('a.tweet-username').attr('href', 'http://www.twitter.com/' + data.twitter_user_screen_name).html('@' + data.twitter_user_screen_name);
+        tweetEl.find('p.tweet-message').html(data.formatted_message);
+        tweetEl.find('a.tweet-view').attr('href', 'http://www.twitter.com/' + data.twitter_user_screen_name + '/status/' + data.twitter_id);
         
         // add icon to map if valid coords
         if (data.latitude != 0 && data.longitude != 0) {
@@ -35,12 +33,11 @@ $(function() {
             });
             
             // create tweet marker info window
-            var windowHtml = $('.info-window-prototype').first().html();
-            windowHtml = windowHtml.replace(/{screen_name}/g, data.twitter_user_screen_name);
-            windowHtml = windowHtml.replace(/{message}/g, data.formatted_message);
-            windowHtml = windowHtml.replace(/{id}/g, data.twitter_id);
+            var windowEl = $('.info-window-prototype').first().clone();
+            windowEl.find('p.tweet-message').html(data.formatted_message);
+            windowEl.find('a.tweet-view').attr('href', 'http://www.twitter.com/' + data.twitter_user_screen_name + '/status/' + data.twitter_id);
             
-            var infoWindow = new google.maps.InfoWindow({content: windowHtml});
+            var infoWindow = new google.maps.InfoWindow({content: windowEl.html()});
             google.maps.event.addListener(marker, "click", function (e) {
                 infoWindow.open (tweetMap, marker);
             });
