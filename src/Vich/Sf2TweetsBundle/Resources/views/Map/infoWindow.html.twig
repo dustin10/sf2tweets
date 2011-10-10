@@ -3,7 +3,7 @@
         {{ obj.formattedMessage | raw }}
     </p>
     <p>
-        <a href="http://www.twitter.com/{screen_name}/status/{id}" target="_blank">
+        <a href="http://www.twitter.com/{{ obj.twitterUserScreenName }}/status/{{ obj.twitterId }}" target="_blank">
             {{ 'tweet.view' | trans([], 'VichSf2TweetsBundle') }} &raquo;
         </a>
     </p>
