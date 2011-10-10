@@ -27,7 +27,7 @@
         <div class="bottombar-inner">
             <div class="container-fluid">
                 <p class="pull-left description">
-                    This site is open source! View the code and contribute on 
+                    {{ 'bottombar.info' | trans([], 'VichSf2TweetsBundle') }} 
                     <a href="https://github.com/dustin10/sf2tweets" target="_blank" class="repo">GitHub</a>.
                 </p>
                 <nav class="pull-right footer-nav">
@@ -53,20 +53,22 @@
         </div>
         <div class="modal-body">
             <p>
-                This site uses Node.js to connect to the Twitter Streaming API and listen for 
-                tweets that have to do with Symfony. It was developed as a fun little project 
-                to test my Symfony2 bundle, <a href="https://github.com/dustin10/VichGeographicalBundle" target="_blank">VichGeographicalBundle</a>.
+                {{ 'aboutdialog.first_paragraph' | trans([], 'VichSf2TweetsBundle') }}, 
+                <a href="https://github.com/dustin10/VichGeographicalBundle" target="_blank">VichGeographicalBundle</a>.
             </p>
             <p>
-                If you would like to learn more about the site, or you want to contribute and 
-                make it even better then visit the GitHub repository:
+                {{ 'aboutdialog.second_paragraph' | trans([], 'VichSf2TweetsBundle') }}:
             </p>
             <ul>
                 <li>
-                    <a href="https://github.com/dustin10/sf2tweets" target="_blank">Symfony2 Tweets Repo</a>
+                    <a href="https://github.com/dustin10/sf2tweets" target="_blank">
+                        {{ 'aboutdialog.repo' | trans([], 'VichSf2TweetsBundle') }}
+                    </a>
                 </li>
                 <li>
-                    <a href="https://github.com/dustin10/sf2tweets-node" target="_blank">Symfony2 Tweets Node.js Library Repo</a>
+                    <a href="https://github.com/dustin10/sf2tweets-node" target="_blank">
+                        {{ 'aboutdialog.node_repo' | trans([], 'VichSf2TweetsBundle') }}
+                    </a>
                 </li>
             </ul>
         </div>

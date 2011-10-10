@@ -1,7 +1,14 @@
 #top bar
-topbar.tagline: "#Symfony2 tweets streaming in real-time!"
+topbar.tagline:  "#Symfony2 tweets streaming in real-time!"
 topbar.newtweet: "New Tweet Received!"
 
 # bottom bar
 bottombar.about: "About"
-bottombar.fork: "Fork me on GitHub"
+bottombar.fork:  "Fork me on GitHub"
+bottombar.info:  "This site is open source! View the code and contribute on"
+
+#about dialog
+aboutdialog.first_paragraph:  "This site uses Node.js to connect to the Twitter Streaming API and listen for tweets that have to do with Symfony. It was developed as a fun little project to test my Symfony2 bundle"
+aboutdialog.second_paragraph: "If you would like to learn more about the site, or you want to contribute and make it even better then visit the GitHub repository"
+aboutdialog.repo: "Symfony2 Tweets Repo"
+aboutdialog.node_repo: "Symfony2 Tweets Node.js Library Repo"
