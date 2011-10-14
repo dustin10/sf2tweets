@@ -37,7 +37,8 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $manager = $this->getContainer()->get('vich_sf2tweets.tweet_manager');
-        
+        $em = $this->getContainer()->get('doctrine')->getEntityManager();
+ 
         $counter = 0;
         $batchSize = 50;
         
