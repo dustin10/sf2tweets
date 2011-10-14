@@ -37,26 +37,9 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $manager = $this->getContainer()->get('vich_sf2tweets.tweet_manager');
-        $em = $this->getContainer()->get('doctrine')->getEntityManager();
- 
-        $counter = 0;
-        $batchSize = 50;
+        $manager->removeOldTweets();
         
-        $tweets = $manager->findOldTweets();
-        foreach ($tweets as $tweet) {
-            $em->remove($tweet);
-            
-            if ($counter > 0 && $counter % $batchSize == 0) {
-                $em->flush();
-                $em->clear();
-            }
-            
-            $counter++;
-        }
-        
-        $em->flush();
-        
-        $output->writeln('Cleaned up tweets.');
+        $output->writeln('Cleaned up tweets...');
     }
 
 }

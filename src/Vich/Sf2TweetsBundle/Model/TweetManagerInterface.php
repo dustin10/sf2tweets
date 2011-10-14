@@ -26,6 +26,13 @@ interface TweetManagerInterface
     function findOldTweets();
     
     /**
+     * Removes old tweets.
+     * 
+     * @return Collection The old tweets.
+     */
+    function removeOldTweets();
+    
+    /**
      * Updates a tweet.
      * 
      * @param Tweet $tweet The tweet.

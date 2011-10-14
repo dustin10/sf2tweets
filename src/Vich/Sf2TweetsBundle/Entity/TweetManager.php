@@ -68,6 +68,29 @@ class TweetManager implements TweetManagerInterface
     /**
      * {@inheritDoc}
      */
+    public function removeOldTweets()
+    {
+        $counter = 0;
+        $batchSize = 50;
+        
+        $tweets = $this->findOldTweets();
+        foreach ($tweets as $tweet) {
+            $this->em->remove($tweet);
+            
+            if ($counter > 0 && $counter % $batchSize == 0) {
+                $this->em->flush();
+                $this->em->clear();
+            }
+            
+            $counter++;
+        }
+        
+        $this->em->flush();
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
     public function updateTweet(Tweet $tweet, $andFlush = true)
     {
         $this->em->persist($tweet);
